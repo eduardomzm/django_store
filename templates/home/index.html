@@ -4,6 +4,13 @@
 
 {% block content %}
     <h1>Welcome to Django Store</h1>
-    <p>Your one</p>
+    {% for p in products %}
+    <div class=" product">
+        <h2>{{ p.name }}</h2>
+        <p>Price: ${{ p.price }}</p>
+        <p>{{ p.description }}</p>
+        <img src="{{ p.image.url }}" alt="" width="200px">
 
+    </div>
+    {% endfor %}
 {% endblock %}    
